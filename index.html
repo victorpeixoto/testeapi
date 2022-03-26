@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - API</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 25rem;
+            margin: auto;
+        }
+        form input, select, button{
+            margin: 5px;
+            padding: 10px;
+        }
+        input:focus, select:focus{
+            border-color: #000;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    
+    <form action="https://sheetdb.io/api/v1/ojq5c0m7780iz" method="POST" id="sheetdb-form">
+        <input type="text" name="data[nome]" id="nome" required placeholder="Digite seu nome">
+        <input type="tel" name="data[celular]" id="celular" required placeholder="Digite (xx) 99999-8888">
+        <input type="email" name="data[email]" id="email" required placeholder="Seu melhor e-mail">
+        <select name="data[curso]" id="curso" required>
+            <option value="disable" selected disabled>Selecione o seu curso</option>
+            <option value="Venda Mais">Venda Mais</option>
+            <option value="Perfumando Vendas">Perfumando Vendas</option>
+            <option value="Controle Financeiro">Controle Financeiro</option>
+            <option value="Limpeza de Pele">Limpeza de Pele</option>
+            <option value="Top Vendas">Top Vendas</option>
+        </select>
+        <input type="submit" value="Cadastrar" id="submit" onclick="submitForm()">
+    </form>
+
+    <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action,{
+                method: "POST",
+                body: new FormData(document.getElementById("sheetdb-form")),
+            }).then(
+                    response => response.json()
+            ).then((html) => {
+            });
+            form.reset();
+        });
+
+    </script>
+    
+    
+</body>
+</html>
