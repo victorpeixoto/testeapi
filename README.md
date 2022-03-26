@@ -1,4 +1,4 @@
-# testeapi
+# TESTE API
 ## Teste API utilizando o SheetDB - Integração com o Google Sheets
   ### Projeto criado para integração entre um FORM feito em HTML e CSS e a planilha do Google (Google Sheets).
 
